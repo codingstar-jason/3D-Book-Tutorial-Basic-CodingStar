@@ -108,13 +108,119 @@ i {
 
 /* Paper stack order */
 #p1 {
-    z-index: 3;
+    z-index: 38;
 }
 
 #p2 {
-    z-index: 2;
+    z-index: 37;
 }
 
 #p3 {
+    z-index: 36;
+}
+#p4 {
+    z-index: 35;
+}
+#p5 {
+    z-index: 34;
+}
+#p6 {
+    z-index: 33;
+}
+#p7 {
+    z-index: 32;
+}
+#p8 {
+    z-index: 31;
+}
+#p9 {
+    z-index: 30;
+}
+#p10 {
+    z-index: 29;
+}
+#p11{
+    z-index: 28;
+}
+#p12{
+    z-index: 27;
+}
+#p13{
+    z-index: 26;
+}
+#p14{
+    z-index: 25;
+}
+#p15{
+    z-index: 24;
+}
+#p16{
+    z-index: 23;
+}
+#p17{
+    z-index: 22;
+}
+#p18{
+    z-index: 21;
+}
+#p19{
+    z-index: 20;
+}
+#p20{
+    z-index: 19;
+}
+#p21{
+    z-index: 18;
+}
+#p22{
+    z-index: 17;
+}
+#p23{
+    z-index: 16;
+}
+#p24{
+    z-index: 15;
+}
+#p25{
+    z-index: 14;
+}
+#p26{
+    z-index: 13;
+}
+#p27{
+    z-index: 12;
+}
+#p28{
+    z-index: 11;
+}
+#p29{
+    z-index: 10;
+}
+#p30{
+    z-index: 9;
+}
+#p31{
+    z-index: 8;
+}
+#p32{
+    z-index: 7;
+}
+#p33 {
+    z-index: 6;
+}
+#p34 {
+    z-index: 5;
+}
+#p35 {
+    z-index: 4;
+}
+#p36 {
+    z-index: 3;
+}
+#p37 {
+    z-index: 2;
+}
+#p38 {
     z-index: 1;
 }
+
