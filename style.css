@@ -67,6 +67,17 @@ body {
     transform: rotateY(180deg)
 }
 
+.img-with-text {
+    text-align: justify;
+    
+}
+
+.img-with-text img {
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+}
+
 /* Paper flip effect */
 .flipped .front,
 .flipped .back {
