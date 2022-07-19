@@ -1,5 +1,8 @@
- 
+.fa, .far, .fas {
+    font-family: "Font Awesome 5 Free";
+} 
 .img-with-text{
+    position:static;
     font: 14px Sans serif;
     color: white;
     padding-left: 10px;
@@ -66,6 +69,7 @@ body {
     height: 100%;
     display: flex;
     justify-content: center;
+    color:black;
     align-items: center;
 }
 
