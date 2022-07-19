@@ -1,6 +1,7 @@
  
 .img-with-text{
-    font: 14px Sans serif;
+    font: 14px arial;
+    font-weight: bold;
     color: white;
     padding-left: 10px;
     padding-right: 10px;
