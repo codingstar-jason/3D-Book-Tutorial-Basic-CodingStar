@@ -1,3 +1,19 @@
+h1 {
+    color: white;
+}
+.container{
+    width: 80%;
+    margin: 0 auto; /* Center the DIV horizontally */
+}
+.header {
+	position: sticky; /*(recomended)*/
+    top: 100px;
+    position: fixed; 
+    color: white;
+    text-align: center;
+    width: auto;
+}
+
 .fa, .far, .fas {
     font-family: "Font Awesome 5 Free";
 } 
@@ -21,6 +37,8 @@ body {
     align-items: center;
     font-family: sans-serif;
     background-color: black;
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 
 /* Book */
