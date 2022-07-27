@@ -10,6 +10,7 @@ h1 {
     top: 100px;
     position: fixed; 
     color: white;
+    background-color: grey;
     text-align: center;
     width: auto;
 }
@@ -23,6 +24,7 @@ h1 {
     color: white;
     padding-left: 10px;
     padding-right: 10px;
+  
 }
 *{
     margin: 0;
