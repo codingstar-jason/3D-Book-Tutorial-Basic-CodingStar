@@ -1,29 +1,47 @@
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 100px;
+    width: 100%;
+    background-color: grey;
+    color: white;
+    text-align: center;
+ }
+.caption{
+    color:aquamarine;
+    padding: 20px;
+    padding-left: 1px;
+    padding-right: 1px;
+    width: 600px;
+}
+
 h1 {
     color: white;
 }
 .container{
-    width: 80%;
-    margin: 0 auto; /* Center the DIV horizontally */
+    width: 90%;
+    margin: auto; /* Center the DIV horizontally */
 }
 .header {
-	position: sticky; /*(recomended)*/
+    position: fixed;
+    left: 0;
     top: 100px;
-    position: fixed; 
-    color: white;
+    width: 100%;
     background-color: grey;
+    color: white;
     text-align: center;
-    width: auto;
-}
+ }
 
 .fa, .far, .fas {
     font-family: "Font Awesome 5 Free";
 } 
 .img-with-text{
-    position:static;
+    position:fixed;
     font: 14px Sans serif;
     color: white;
     padding-left: 10px;
     padding-right: 10px;
+    top:5px;
   
 }
 *{
@@ -101,7 +119,7 @@ body {
 .img-with-text img {
     display: block;
     margin: 0 auto;
-    width: 550px;
+    width: 600px;
 }
 
 /* Paper flip effect */
