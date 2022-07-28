@@ -3,17 +3,22 @@
     left: 0;
     bottom: 100px;
     width: 100%;
-    background-color: grey;
+    background-color: #4a4a4a;
     color: white;
     text-align: center;
  }
 .caption{
-    color:aquamarine;
+    color:white;
     padding:5px;
     padding-left: 1px;
     padding-right: 1px;
     width: 600px;
-}
+    
+        font-family: "Open sans",sans-serif;
+        font-size: 12px;
+        
+    }
+
 
 h1 {
     color: white;
@@ -27,10 +32,17 @@ h1 {
     left: 0;
     top: 100px;
     width: 100%;
-    background-color: grey;
+    background-color: #4a4a4a;
     color: white;
     text-align: center;
- }
+    
+        font-family: "Open sans",sans-serif;
+        font-size: 14px;
+        line-height: 1.428571429;
+        
+       
+    }
+ 
 
 .fa, .far, .fas {
     font-family: "Font Awesome 5 Free";
