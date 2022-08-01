@@ -55,8 +55,8 @@ let maxLocation = numOfPapers + 1;
 
 function openBook() {
     book.style.transform = "translateX(50%)";
-    prevBtn.style.transform = "translateX(-180px)";
-    nextBtn.style.transform = "translateX(180px)";
+    prevBtn.style.transform = "translateX(-350px)";
+    nextBtn.style.transform = "translateX(350px)";
 }
 
 function closeBook(isAtBeginning) {
@@ -430,7 +430,7 @@ function goPrevPage() {
                 paper37.style.zIndex = 2;
                 
                 break;
-            case 38:
+            case 39:
                 openBook();
                 paper38.classList.remove("flipped");
                 paper38.style.zIndex = 1;
