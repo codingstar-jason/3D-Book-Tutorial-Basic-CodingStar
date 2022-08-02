@@ -4,25 +4,22 @@
     left: 0;
     bottom: 10px;
     background: black;
-   
-   color:white;
+    color:white;
     text-align: center;
  }
 
-.footer1 {
+.home-btn {
     padding-top: 0px;
     position: fixed;
     left: 0;
     bottom: 10px;
-    background: black;
-   
-   color:white;
+    color:white;
     text-align: left;
  }
 
 
 .footer {
-    padding-top: 50px;
+    padding-top: 5px;
     position: fixed;
     left: 0;
     bottom: 100px;
@@ -31,17 +28,14 @@
     color: white;
     text-align: center;
  }
-.caption{
-    color:white;
-    padding:5px;
-    padding-left: 1px;
-    padding-right: 1px;
-    width: 600px;
-    font-family: "Open sans",sans-serif;
-    font-size: 12px;
-        
-}
 
+ .cover{
+    color: white;
+    text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
+
+ }
 
 h1 {
     color: white;
@@ -53,7 +47,7 @@ h1 {
 .header {
     position: fixed;
     left: 0;
-    top: 100px;
+    top: 50px;
     width: 100%;
     background: radial-gradient( #353535, #000000);
     color: white;
@@ -67,20 +61,6 @@ h1 {
 .fa, .far, .fas {
     font-family: "Font Awesome 5 Free";
 } 
-.img-with-text{
-    position:fixed;
-    font: 14px Sans serif;
-    color: white;
-    padding-left: 10px;
-    padding-right: 10px;
-    top:5px;
-  
-}
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 body {
     height: 100vh;
@@ -88,12 +68,7 @@ body {
     justify-content: center;
     align-items: center;
     font-family: sans-serif;
-   /* background:radial-gradient(#000000, #36454F);*/
-   background: 
-       /* radial-gradient( #000000, transparent),
-        radial-gradient( #2c2c2c, transparent),
-        radial-gradient( #000000, transparent);*/
-        radial-gradient(closest-side,#2c2c2c, #2c2c2c, #000000);
+    background: radial-gradient(closest-side,#2c2c2c, #2c2c2c, #000000);
     padding-top: 0px;
     padding-bottom: 60px;
 }
@@ -113,7 +88,6 @@ body {
     top: 0;
     left: 0;
     perspective: 1500px;
-
 }
 
 .front,
@@ -144,7 +118,6 @@ body {
     height: 100%;
     display: flex;
     justify-content: center;
-    color:black;
     align-items: center;
 }
 
@@ -152,11 +125,27 @@ body {
     transform: rotateY(180deg)
 }
 
-
+.img-with-text{
+    position:fixed;
+    font: 14px Sans serif;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    top:5px; 
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .img-with-text img {
-    display: block;
-    margin: 0 auto;
+    height: 438px;
+}
+.caption{
+    color:white;
     width: 600px;
+    font-family: "Open sans",sans-serif;
+    font-size: 12px;    
 }
 
 /* Paper flip effect */
