@@ -3,6 +3,7 @@ const prevBtn = document.querySelector("#prev-btn");
 const nextBtn = document.querySelector("#next-btn");
 const book = document.querySelector("#book");
 const home = document.querySelector("#home-btn")
+const helpBtn = document.querySelector("#help-btn")
 
 const paper1 = document.querySelector("#p1");
 const paper2 = document.querySelector("#p2");
@@ -49,6 +50,8 @@ const paper38 = document.querySelector("#p38");
 prevBtn.addEventListener("click", goPrevPage);
 nextBtn.addEventListener("click", goNextPage);
 home.addEventListener("click", goToStart);
+helpBtn.addEventListener("click", custom_alert);
+
 
 // Business Logic
 let currentLocation = 1;
@@ -79,6 +82,15 @@ function goToStart(){
         }
     }
 }
+
+function custom_alert(){
+    swal({
+          title: 'Title',
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod pidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+          html: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod pidatat non proident, <strong>sunt in culpa qui officia</strong> deserunt mollit anim id est laborum.</p>'
+    })
+        
+ }
 
 function goNextPage() {
     if(currentLocation < maxLocation) {
@@ -452,4 +464,6 @@ function goPrevPage() {
 
         currentLocation--;
     }
+
+   
 }

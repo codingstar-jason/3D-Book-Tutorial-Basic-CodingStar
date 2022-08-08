@@ -1,14 +1,19 @@
-.footer2 {
+
+.help-btn {
     padding-top: 0px;
     position: fixed;
-    left: 0;
+    right: 0;
     bottom: 10px;
-    background: black;
     color:white;
-    text-align: center;
+    text-align: right;
  }
 
+<<<<<<< HEAD
 .footer1 {
+=======
+
+.home-btn {
+>>>>>>> 6a8886e1a7051c58a63302c98ea0568a8a160633
     padding-top: 0px;
     position: fixed;
     left: 0;
