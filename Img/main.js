@@ -85,11 +85,11 @@ function goToStart(){
 
 function custom_alert(){
     Swal.fire({
-        title: 'Help page for silver horn interactive!',
-        text: 'Modal with a custom image.',
+        title: 'Help',
+        text: '',
          imageUrl: 'https://www.nelson-atkins.org/wp-content/uploads/2022/08/help-page-for-silver-horn-interactive.png',
-        imageWidth: 400,
-        imageHeight: 200,
+        imageWidth: 700,
+        imageHeight: 500,
         imageAlt: 'Custom image',
       })  
  }
