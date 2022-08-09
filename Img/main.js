@@ -85,11 +85,12 @@ function goToStart(){
 
 function custom_alert(){
     swal({
-          title: 'Title',
-          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod pidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-          html: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod pidatat non proident, <strong>sunt in culpa qui officia</strong> deserunt mollit anim id est laborum.</p>'
-    })
-        
+            title: 'Help',  
+            text: 'omage',
+          imageUrl: './help page for silver horn interactive.png',
+          imageWidth: 400,
+          imageHeight: 400,
+    })     
  }
 
 function goNextPage() {
