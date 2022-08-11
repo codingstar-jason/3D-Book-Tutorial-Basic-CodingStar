@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 .header1 {
     position: fixed;
     left: 0;
@@ -175,9 +182,11 @@ body {
     height: 438px;
 }
 .caption{
-    color:white;
+    background: #181A15;
+    color:#F1F2F2;
+    line-height: 1.4;
     width: 600px;
-    font-family: "Open sans",sans-serif;
+    font-family: ff-scala-sans-pro, sans-serif;
     font-size: 12px;    
 }
 
