@@ -1,6 +1,22 @@
+.header1 {
+    position: fixed;
+    left: 0;
+    top: 100px;
+    width: 100%;
+    background: radial-gradient(#808285, #141510);
+    text-align: center;
+    color: #A4A4A1;
+    font-size: 15px;
+    line-height: 2; 
+    font-family: ff-scala-sans-pro, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
 /* .swal2-header .swal2-popup .swal2-modal .swal2-show{
     background-color:#000000;
 } */
+
 .help-btn {
     padding-top: 0px;
     position: fixed;
@@ -12,12 +28,14 @@
 
 
 .home-btn {
+    font-family: ff-scala-sans-pro, sans-serif;
     padding-top: 0px;
     position: fixed;
     left: 0;
     bottom: 10px;
     color:white;
     text-align: left;
+    
  }
 
 
@@ -28,9 +46,9 @@
     bottom: 100px;
     width: 100%;
     background: radial-gradient( #808285, #141510);
-    color: white;
+    color: #F1F2F2;
     text-align: center;
-    font-family: ScalaSans, #f1f2f2;
+    font-family: ff-scala-sans-pro, sans-serif;
     padding-top: 10px;
     padding-bottom: 10px;
  }
@@ -55,15 +73,15 @@ h1 {
     left: 0;
     top: 50px;
     width: 100%;
-    background: radial-gradient(  #141510,#808285);
+    background: radial-gradient(#141510);
     color: white;
     text-align: center;
-    font-family:FF-Scala Sans Pro, #A4A4A1;
+    color: #A4A4A1;
     font-size: 25px;
     line-height: 2; 
+    font-family: ff-scala-sans-pro, sans-serif;
     font-weight: 700;
-
-font-style: normal;
+    font-style: normal;
 }
  
 
@@ -80,6 +98,10 @@ body {
     background: radial-gradient(closest-side,#2c2c2c, #2c2c2c, #000000);
     padding-top: 0px;
     padding-bottom: 60px;
+    font-family: ff-scala-sans-pro, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: left;
 }
 
 /* Book */
@@ -136,15 +158,13 @@ body {
 
 .img-with-text{
     position:fixed;
-    font: 14px FF-Scala Sans Pro, #F1F2F2;
-    color: white;
+    font: 14px FF-Scala Sans Pro;
+    color: #F1F2F2;
+    background: #181A15;
     padding-left: 10px;
     padding-right: 10px;
     top:5px; 
-
-font-weight: 700;
-
-font-style: normal;
+    text-align:left;
 }
 *{
     margin: 0;
@@ -177,6 +197,7 @@ button {
     padding-right: 100px;
     transition: transform 0.5s;
     color:#FFFFFF;
+    font-family: ff-scala-sans-pro, sans-serif;
 }
 
 button:focus {
