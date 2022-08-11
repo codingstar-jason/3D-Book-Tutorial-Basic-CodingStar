@@ -167,7 +167,7 @@ body {
     position:fixed;
     font: 14px FF-Scala Sans Pro;
     color: #F1F2F2;
-    background: #181A15;
+    
     padding-left: 10px;
     padding-right: 10px;
     top:5px; 
@@ -182,7 +182,7 @@ body {
     height: 438px;
 }
 .caption{
-    background: #181A15;
+   
     color:#F1F2F2;
     line-height: 1.4;
     width: 600px;
