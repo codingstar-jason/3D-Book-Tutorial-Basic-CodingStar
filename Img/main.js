@@ -3,7 +3,7 @@ const prevBtn = document.querySelector("#prev-btn");
 const nextBtn = document.querySelector("#next-btn");
 const book = document.querySelector("#book");
 const home = document.querySelector("#home-btn")
-const helpBtn = document.querySelector("#help-btn")
+// const helpBtn = document.querySelector("#help-btn")
 
 const paper1 = document.querySelector("#p1");
 const paper2 = document.querySelector("#p2");
@@ -50,7 +50,7 @@ const paper38 = document.querySelector("#p38");
 prevBtn.addEventListener("click", goPrevPage);
 nextBtn.addEventListener("click", goNextPage);
 home.addEventListener("click", goToStart);
-helpBtn.addEventListener("click", custom_alert);
+// helpBtn.addEventListener("click", custom_alert);
 
 
 // Business Logic
@@ -83,16 +83,17 @@ function goToStart(){
     }
 }
 
-function custom_alert(){
-    Swal.fire({
-        title: 'Help',
-        text: '',
-         imageUrl: 'https://www.nelson-atkins.org/wp-content/uploads/2022/08/help-page-for-silver-horn-interactive.png',
-        imageWidth: 700,
-        imageHeight: 500,
-        imageAlt: 'Custom image',
-      })  
- }
+// function custom_alert(){
+//     Swal.fire({
+//         title: 'Help',
+//         text: '',
+//          imageUrl: 'https://www.nelson-atkins.org/wp-content/uploads/2022/08/help-page-for-silver-horn-interactive.png',
+//         imageWidth: 700,
+//         imageHeight: 500,
+//         imageAlt: 'Custom image',
+
+//       })  
+//  }
 
 function goNextPage() {
     if(currentLocation < maxLocation) {

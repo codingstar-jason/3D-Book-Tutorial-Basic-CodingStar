@@ -1,4 +1,6 @@
-
+/* .swal2-header .swal2-popup .swal2-modal .swal2-show{
+    background-color:#000000;
+} */
 .help-btn {
     padding-top: 0px;
     position: fixed;
@@ -25,9 +27,12 @@
     left: 0;
     bottom: 100px;
     width: 100%;
-    background: radial-gradient( #353535, #000000);
+    background: radial-gradient( #808285, #141510);
     color: white;
     text-align: center;
+    font-family: ScalaSans, #f1f2f2;
+    padding-top: 10px;
+    padding-bottom: 10px;
  }
 
  .cover{
@@ -50,12 +55,15 @@ h1 {
     left: 0;
     top: 50px;
     width: 100%;
-    background: radial-gradient( #353535, #000000);
+    background: radial-gradient(  #141510,#808285);
     color: white;
     text-align: center;
-    font-family: "Open sans",sans-serif;
-    font-size: 14px;
+    font-family:FF-Scala Sans Pro, #A4A4A1;
+    font-size: 25px;
     line-height: 2; 
+    font-weight: 700;
+
+font-style: normal;
 }
  
 
@@ -68,7 +76,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: sans-serif;
+    font-family: ScalaSans, #A4A4A1;
     background: radial-gradient(closest-side,#2c2c2c, #2c2c2c, #000000);
     padding-top: 0px;
     padding-bottom: 60px;
@@ -128,11 +136,15 @@ body {
 
 .img-with-text{
     position:fixed;
-    font: 14px Sans serif;
+    font: 14px FF-Scala Sans Pro, #F1F2F2;
     color: white;
     padding-left: 10px;
     padding-right: 10px;
     top:5px; 
+
+font-weight: 700;
+
+font-style: normal;
 }
 *{
     margin: 0;
@@ -161,7 +173,10 @@ button {
     background-color: transparent;
     cursor: pointer;
     margin: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
     transition: transform 0.5s;
+    color:#FFFFFF;
 }
 
 button:focus {
