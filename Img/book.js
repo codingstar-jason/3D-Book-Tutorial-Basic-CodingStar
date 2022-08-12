@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     );
 
+
     // load pages
     pageFlip.loadFromHTML(document.querySelectorAll(".page"));
 
@@ -49,4 +50,17 @@ document.addEventListener('DOMContentLoaded', function() {
     pageFlip.on("changeOrientation", (e) => {
         document.querySelector(".page-orientation").innerText = e.data;
     });
+
+    // home button function
+    const home = document.querySelector("#home-btn")
+
+    // Event Listener
+    home.addEventListener("click", function (){
+        while(document.querySelector(".page-current").innerText > 1){
+        pageFlip.flipPrev();
+        }
+    });
 });
+
+
+
