@@ -1,9 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
+    
+    document.querySelector(".container").classList.remove("hidden");
 
     const pageFlip = new St.PageFlip(
         document.getElementById("demoBookExample"),
         {
-            width: 700, // base page width
+            width: 610, // base page width
             height: 500, // base page height
 
             size: "fixed",

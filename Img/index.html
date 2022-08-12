@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explore the Silver Horn Book of Drawings</title>
     <link rel="stylesheet" href="./style.css">
-    <script src="./main.js" defer></script>
+    <!-- <script src="./main.js" defer></script> -->
     <script src="https://kit.fontawesome.com/b0f29e9bfe.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://use.typekit.net/xyu4lmf.css">
-    <link rel="stylesheet" href="./style.sass">
+    <!-- <link rel="stylesheet" href="./style.sass"> -->
     <script src="./book.js" defer></script>
     <script src="https://kit.fontawesome.com/b0f29e9bfe.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.js"></script>
@@ -38,24 +38,22 @@
 
 
 <!-- turnpage book  -->
-  
-    
         
-    
-    <div class="container">
+    <div class="container hidden">
         <div class="flip-book" id="demoBookExample">
             <div class="page page-cover page-cover-top" data-density="hard">
                 <div class="page-content">
-                    <img src="frontcover.jpeg"></img> 
+                    
+                    <div class="img-with-text"><img src="frontcover.jpeg"></img> </div>
                 </div>
             </div>
-            <div class="page">
+            <div class="page" >
                 <div class="page-content">
-                    <img src="frontcover.jpeg"></img> 
+                    <div class="img-with-text"><img src="frontcover.jpeg"></img> </div>
                 </div>
             </div>
             <!-- PAGES .... -->
-            <div class="page">
+            <div class="page" >
                 <div class="img-with-text">
                     <img src="silverhorn-1.jpg" alt="screen reader text"></img>     
                     <div id="caption" class="caption">                
@@ -782,6 +780,7 @@
                 </div>
             </div>
         </div>
+
     </div>
 
     
