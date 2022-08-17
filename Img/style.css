@@ -6,8 +6,8 @@
         }
         .img-with-text:hover img
         {
-            -webkit-transform:scale(1.5);
-            transform:scale(1.5);
+            -webkit-transform:scale(1.2);
+            transform:scale(1.2);
             transition: width 1s;
             transition-delay: 1s;
         
@@ -26,6 +26,7 @@
     @media screen and (max-width: 1025px), screen and (min-width: 800px) {
         .book .paper .img .img-with-text .header .body .header1 .container .fa .far .fas .hidden .caption .home-btn .footer .btn-prev .btn-next
          {
+            
            
             width: 100%;
                 
