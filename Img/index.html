@@ -13,6 +13,8 @@
     <script src="./book.js" defer></script>
     <script src="https://kit.fontawesome.com/b0f29e9bfe.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
+    <script src="tap.js" ></script>
     
  
 </head>
@@ -36,6 +38,18 @@
         <i class="fas fa-chevron-left"></i>Previous</p>
     </button>
 
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- The Close Button -->
+        <span class="close">&times;</span>
+    
+        <!-- Modal Content (The Image) -->
+        <img class="modal-content" id="img01">
+    
+        <!-- Modal Caption (Image Text) -->
+        <div id="caption"></div>
+    </div>
+
 
 <!-- turnpage book  -->
         
@@ -44,18 +58,20 @@
             <div class="page page-cover page-cover-top" data-density="hard">
                 <div class="page-content">
                     
-                    <div class="img-with-text"><img src="frontcover.jpeg" alt="screen reader text"></img> </div>
+                    <div class="img-with-text">
+                        <img id="myImg01" src="frontcover.jpeg" alt="screen reader text"></img> 
+                    </div>
                 </div>
             </div>
             <div class="page" >
                 <div class="page-content">
-                    <div class="img-with-text"><img src="frontcover.jpeg" alt="screen reader text"></img> </div>
+                    <div class="img-with-text"><img id="myImg02" src="frontcover.jpeg" alt="screen reader text"></img> </div>
                 </div>
             </div>
             <!-- PAGES .... -->
             <div class="page" >
                 <div class="img-with-text">
-                    <img src="silverhorn-1.jpg" alt="screen reader text"></img>     
+                    <img id="myImg03" src="silverhorn-1.jpg" alt="screen reader text"></img>     
                     <div id="caption" class="caption">                
                     <caption> White Horse, Kiowa Killing Pawnee, as captioned by D. P. Brown, 1883 </caption></div>
                 </div>
