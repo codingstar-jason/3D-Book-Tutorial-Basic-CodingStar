@@ -11,61 +11,64 @@ document.addEventListener('DOMContentLoaded', function() {
     var img2 = document.getElementById("myImg02");
     var img3 = document.getElementById("myImg03");
     var modalImg = document.getElementById("img01");
-    var captionText = document.getElementById("caption");
+    var captionText = document.getElementById("mod-caption");
     var manager1 = new Hammer.Manager(img1);
     var manager2 = new Hammer.Manager(img2);
     var manager3 = new Hammer.Manager(img3);
     
-    // var Tap = new Hammer.Tap({
-    //     taps: 1
-    //   });
+    var Tap = new Hammer.Tap({
+        taps: 1
+      });
       
-    //   manager1.add(Tap); 
-    //   manager2.add(Tap); 
-    //   manager3.add(Tap); 
+      manager1.add(Tap); 
+      manager2.add(Tap); 
+      manager3.add(Tap); 
+
+        manager1.on('tap', function(e){
+        modal.style.display = "block";
+        modalImg.src = e.target.src;
+        captionText.innerHTML = e.target.alt;
+    });
+
+    manager2.on('tap', function(e){
+        modal.style.display = "block";
+        modalImg.src = e.target.src;
+        captionText.innerHTML = e.target.alt;
+    });
+
+    manager3.on('tap', function(e){
+        modal.style.display = "block";
+        modalImg.src = e.target.src;
+        captionText.innerHTML = e.target.alt;
+    });
+
+
+    // //   testing pinch
+    // //   hammertime.get('pinch').set({ enable: true });
+    //     var Pinch = new Hammer.Pinch();
+    //     manager1.add(Pinch); 
+    //     manager2.add(Pinch); 
+    //     manager3.add(Pinch); 
+
+    //     manager1.on('pinch', function(e){
+    //         modal.style.display = "block";
+    //         modalImg.src = e.target.src;
+    //         captionText.innerHTML = e.target.alt;
+    //     });
     
-    //   testing pinch
-    //   hammertime.get('pinch').set({ enable: true });
-        var Pinch = new Hammer.Pinch();
-        manager1.add(Pinch); 
-        manager2.add(Pinch); 
-        manager3.add(Pinch); 
-
-        manager1.on('pinch', function(e){
-            modal.style.display = "block";
-            modalImg.src = e.target.src;
-            captionText.innerHTML = e.target.alt;
-        });
+    //     manager2.on('pinch', function(e){
+    //         modal.style.display = "block";
+    //         modalImg.src = e.target.src;
+    //         captionText.innerHTML = e.target.alt;
+    //     });
     
-        manager2.on('pinch', function(e){
-            modal.style.display = "block";
-            modalImg.src = e.target.src;
-            captionText.innerHTML = e.target.alt;
-        });
-    
-        manager3.on('pinch', function(e){
-            modal.style.display = "block";
-            modalImg.src = e.target.src;
-            captionText.innerHTML = e.target.alt;
-        });
+    //     manager3.on('pinch', function(e){
+    //         modal.style.display = "block";
+    //         modalImg.src = e.target.src;
+    //         captionText.innerHTML = e.target.alt;
+    //     });
 
-    // manager1.on('tap', function(e){
-    //     modal.style.display = "block";
-    //     modalImg.src = e.target.src;
-    //     captionText.innerHTML = e.target.alt;
-    // });
 
-    // manager2.on('tap', function(e){
-    //     modal.style.display = "block";
-    //     modalImg.src = e.target.src;
-    //     captionText.innerHTML = e.target.alt;
-    // });
-
-    // manager3.on('tap', function(e){
-    //     modal.style.display = "block";
-    //     modalImg.src = e.target.src;
-    //     captionText.innerHTML = e.target.alt;
-    // });
     
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
@@ -85,14 +88,12 @@ document.addEventListener('DOMContentLoaded', function() {
             height: 700, // base page height
 
             size: "fixed",
-            // set threshold values:
-            // minWidth: 315,
-            // maxWidth: 1000,
-            // minHeight: 420,
-            // maxHeight: 1350,
+            
+            flippingTime: 800,
+            swipeDistance: 10,
             disableFlipByClick: true,
             maxShadowOpacity: 0.5, // Half shadow intensity
-            showCover: true,
+            showCover: false,
             mobileScrollSupport: false // disable content scrolling on mobile devices
         }
     );

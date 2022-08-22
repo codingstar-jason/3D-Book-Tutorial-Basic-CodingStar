@@ -150,16 +150,16 @@
         
         
         /* Book */
-        .page {
+        .page-bkg {
            background-color: #000000;
         }
-        
+
         .img-with-text{
             position:relative;
             font: 14px FF-Scala Sans Pro;
             color: #F1F2F2;
             top:5px; 
-            text-align:left;
+            text-align:center;
         }
         *{
             margin: auto;
@@ -169,13 +169,23 @@
         .img-with-text img {
             height: 610px;
         }
-        .caption{
-        
+        .book-desc{
+            text-align:center;
             color:#F1F2F2;
             line-height: 1.4;
             width: 800px;
             font-family: ff-scala-sans-pro, sans-serif;
-            font-size: 12px;    
+            font-size: 20px;    
+            padding: 10%;
+            padding-top: 20%;
+        }
+        .caption{
+            text-align:center;
+            color:#F1F2F2;
+            line-height: 1.4;
+            width: 800px;
+            font-family: ff-scala-sans-pro, sans-serif;
+            font-size: 14px;    
         }
         
         /* Controller Buttons */
@@ -200,6 +210,7 @@
         } */
         
         i {
+            padding-bottom: 5px;
             font-size: 50px;
             color: white;
         }
@@ -243,7 +254,7 @@
         }
         
         /* Caption of Modal Image (Image Text) - Same Width as the Image */
-        #caption {
+        #mod-caption {
             font-family: ff-scala-sans-pro, sans-serif;
           margin: auto;
           display: block;
@@ -256,7 +267,7 @@
         }
         
         /* Add Animation - Zoom in the Modal */
-        .modal-content, #caption {
+        .modal-content, #mod-caption {
           animation-name: zoom;
           animation-duration: 0.6s;
         }
