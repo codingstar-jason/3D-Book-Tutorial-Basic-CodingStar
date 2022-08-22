@@ -14,29 +14,25 @@
     <script src="https://kit.fontawesome.com/b0f29e9bfe.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
-    <script src="tap.js" ></script>
+    <!-- <script src="tap.js" ></script> -->
     
  
 </head>
 <body>
-    <div>
-        <header class="header">
+        <div class="header">
             <p>Explore the Silver Horn Book of Drawings </p>
-        </header>
-    </div>
-   <div>
-       <header1 class="header1">
+        </div>
+   
+       <div class="header1">
         <p>Tap anywhere to begin </p>
-       </header1>
-   </div>
-
-
-        
-        
+       </div>
+   
+   
     <!-- Previous Button -->
     <button type="button" class="btn-prev" id="prev-btn" >
-        <i class="fas fa-chevron-left"></i>Previous</p>
-    </button>
+        <i class="fas fa-chevron-left"></i>
+        <p>Previous</p>
+    </button>  
 
     <!-- The Modal -->
     <div id="myModal" class="modal">
@@ -50,28 +46,30 @@
         <div id="caption"></div>
     </div>
 
-
-<!-- turnpage book  -->
-        
+    <!-- turnpage book  -->   
     <div class="container hidden">
         <div class="flip-book" id="demoBookExample">
             <div class="page page-cover page-cover-top" data-density="hard">
                 <div class="page-content">
-                    
                     <div class="img-with-text">
-                        <img id="myImg01" src="frontcover.jpeg" alt="screen reader text"></img> 
+                        <img id="myImg01" src="frontcover.jpeg" alt="Front cover"></img> 
+                        <div id="caption" class="caption">                
+                            <caption>Tap on pages to get a closer look.<br>Swipe or use the previous or next buttons to expore the book </caption>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="page" >
                 <div class="page-content">
-                    <div class="img-with-text"><img id="myImg02" src="frontcover.jpeg" alt="screen reader text"></img> </div>
+                    <div class="img-with-text">
+                        <img id="myImg02" src="frontcover.jpeg" alt="screen reader text"></img> 
+                    </div>
                 </div>
             </div>
             <!-- PAGES .... -->
             <div class="page" >
                 <div class="img-with-text">
-                    <img id="myImg03" src="silverhorn-1.jpg" alt="screen reader text"></img>     
+                    <img id="myImg03" src="silverhorn-1.jpg" alt="White Horse, Kiowa Killing Pawnee, as captioned by D. P. Brown, 1883"></img>     
                     <div id="caption" class="caption">                
                     <caption> White Horse, Kiowa Killing Pawnee, as captioned by D. P. Brown, 1883 </caption></div>
                 </div>
@@ -270,7 +268,7 @@
             </div>
             <div class="page">
                 <div class="page-content">
-                    div class="img-with-text">
+                    <div class="img-with-text">
                     <img src="silverhorn-22.jpg" alt="screen reader text"></img>     
                     <div id="caption" class="caption">                 
                     <caption>Hoaf-to-ti (Kiowa) and Two Braves Dancing War Dance, as captioned by D. P. Brown, 1883
@@ -792,38 +790,46 @@
             </div>
             <div class="page page-cover page-cover-bottom" data-density="hard">
                 <div class="page-content">
-                    <img src="backcover.jpeg" alt="screen reader text"></img> 
+                    <div class="img-with-text">
+                        <img src="backcover.jpeg" alt="screen reader text"></img>      
+                    </div>
                 </div>
             </div>
+            </div>
         </div>
-
     </div>
 
     
 
     <!-- Next Button -->
     <button type="button" class="btn-next" id="next-btn">
-        <i class="fas fa-chevron-right"></i><p>Next</p>
+        <i class="fas fa-chevron-right"></i>
+        <p>Next</p>
     </button>
 
   <!-- footer-->
 
 <div class="footer">
-    [<span class="page-current">1</span> of <span class="page-total">-</span>]
-    <p>Silver Horn (Haungooah)<br>
-    <!-- Kiowa, Oklahoma, 1860-1940<br>
-    Book of 75 drawings, ca. 1883<br>
-    graphite and colored pencil on paper</p> -->
+    <div class="home-btn">
+        <button id="home-btn" >
+            <i class="fa fa-book"></i>
+            <br>
+            <p>Close Book</p>
+            <p>[<span class="page-current">1</span> of <span class="page-total">-</span>]</p>
+        </button>
+        <div style=" display: none; visibility: hidden;">
+            State: <i class="page-state">read</i>, orientation: <i class="page-orientation">landscape</i>
+        </div>
+    </div> 
+    <div style="text-align: center;"> 
+        <p>Silver Horn (Haungooah)<br>
+        Kiowa, Oklahoma, 1860-1940<br>
+        Book of 75 drawings, ca. 1883<br>
+        graphite and colored pencil on paper</p>
+    </div>
 </div>
 
-<div class="home-btn">
-    <button id="home-btn" >
-        <i class="fa fa-home"></i><br> <p>Return to start page</p>
-    </button>
-    <div style=" display: none; visibility: hidden;">
-        State: <i class="page-state">read</i>, orientation: <i class="page-orientation">landscape</i>
-    </div>
-</div> 
+
 
 <!-- <div class="help-btn">
     <button id="help-btn" >
