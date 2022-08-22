@@ -23,68 +23,45 @@ document.addEventListener('DOMContentLoaded', function() {
     //     taps: 1
     //   });
       
-    //   var Tap2 = new Hammer.Tap({
-    //     taps: 2
-    //   });
-
-    //   manager1.add(Tap); 
-    //   manager2.add(Tap); 
-    //   manager3.add(Tap); 
-    //   modalManager.add(Tap2)
-
-    //     manager1.on('tap', function(e){
-    //     modal.style.display = "block";
-    //     modalImg.src = e.target.src;
-    //     captionText.innerHTML = e.target.alt;
+    // var Tap2 = new Hammer.Tap({
+    // taps: 2
     // });
 
-    // manager2.on('tap', function(e){
-    //     modal.style.display = "block";
-    //     modalImg.src = e.target.src;
-    //     captionText.innerHTML = e.target.alt;
-    // });
+    // manager1.add(Tap); 
+    // manager2.add(Tap); 
+    // manager3.add(Tap); 
+    // modalManager.add(Tap2)
 
-    // manager3.on('tap', function(e){
-    //     modal.style.display = "block";
-    //     modalImg.src = e.target.src;
-    //     captionText.innerHTML = e.target.alt;
-    // });
+    // manager1.on('tap', openModal);
+
+    // manager2.on('tap', openModal);
+
+    // manager3.on('tap', openModal);
 
     // modalManager.on('tap', function(){
     //     modal.style.display = "none";
     // });
 
+
+
     //   testing pinch
-    hammertime.get('pinch').set({ enable: true });
+    //hammertime.get('pinch').set({ enable: true });
         var Pinch = new Hammer.Pinch();
-        manager1.add([pinch, pinchin]); 
-        manager2.add([pinch, pinchin]); 
-        manager3.add([pinch, pinchin]); 
-        modalManager.add([pinch, pinchin, pinchout]);
+        manager1.add(Pinch); 
+        manager2.add(Pinch); 
+        manager3.add(Pinch); 
+        modalManager.add(Pinch);
 
         
 
-        manager1.on('pinchout', function(e){
-            modal.style.display = "block";
-            modalImg.src = e.target.src;
-            captionText.innerHTML = e.target.alt;
-        });
-    
-        manager2.on('pinchout', function(e){
-            modal.style.display = "block";
-            modalImg.src = e.target.src;
-            captionText.innerHTML = e.target.alt;
-        });
-    
-        manager3.on('pinchout', function(e){
-            modal.style.display = "block";
-            modalImg.src = e.target.src;
-            captionText.innerHTML = e.target.alt;
-        });
+        manager1.on('pinchout', openModal);
+        manager2.on('pinchout', openModal);
+        manager3.on('pinchout', openModal);
 
         modalManager.on('pinchin', function(){
             modal.style.display = "none";
         });
+
 
 
     
@@ -96,6 +73,11 @@ document.addEventListener('DOMContentLoaded', function() {
       modal.style.display = "none";
     }
 
+    function openModal(e){
+        modal.style.display = "block";
+        modalImg.src = e.target.src;
+        captionText.innerHTML = e.target.alt;
+    }
 
     document.querySelector(".container").classList.remove("hidden");
 
