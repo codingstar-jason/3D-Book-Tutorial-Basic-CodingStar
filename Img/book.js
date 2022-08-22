@@ -55,12 +55,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // });
 
     //   testing pinch
-    //   hammertime.get('pinch').set({ enable: true });
+    hammertime.get('pinch').set({ enable: true });
         var Pinch = new Hammer.Pinch();
-        manager1.add(Pinch); 
-        manager2.add(Pinch); 
-        manager3.add(Pinch); 
-        modalManager.add(Pinch)
+        manager1.add([pinch, pinchin]); 
+        manager2.add([pinch, pinchin]); 
+        manager3.add([pinch, pinchin]); 
+        modalManager.add([pinch, pinchin, pinchout]);
+
+        
 
         manager1.on('pinchout', function(e){
             modal.style.display = "block";
