@@ -50,29 +50,29 @@ document.addEventListener('DOMContentLoaded', function() {
         manager1.add(Pinch); 
         manager2.add(Pinch); 
         manager3.add(Pinch); 
-        //modalManager.add(Pinch);
+        modalManager.add(Pinch);
 
         
 
-        manager1.on('pinch', function(e){
+        manager1.on('pinch pinchout', function(e){
             modal.style.display = "block";
             modalImg.src = e.target.src;
             captionText.innerHTML = e.target.alt;
         });
-        manager2.on('pinch', function(e){
+        manager2.on('pinch pinchout', function(e){
             modal.style.display = "block";
             modalImg.src = e.target.src;
             captionText.innerHTML = e.target.alt;
-        });
-        manager3.on('pinch', function(e){
+        }); 
+        manager3.on('pinch pinchout', function(e){
             modal.style.display = "block";
             modalImg.src = e.target.src;
             captionText.innerHTML = e.target.alt;
         });
 
-        // modalManager.on('pinch', function(){
-        //     modal.style.display = "none";
-        // });
+        modalManager.on('pinch pinchin', function(){
+            modal.style.display = "none";
+        });
 
 
 
