@@ -18,61 +18,61 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var modalManager = new Hammer.Manager(modalImg);
     
-    // //tap for desktop testing
-    // var Tap = new Hammer.Tap({
-    //     taps: 1
-    //   });
+    //tap for desktop testing
+    var Tap = new Hammer.Tap({
+        taps: 1
+      });
       
-    // var Tap2 = new Hammer.Tap({
-    // taps: 2
-    // });
+    var Tap2 = new Hammer.Tap({
+    taps: 2
+    });
 
-    // manager1.add(Tap); 
-    // manager2.add(Tap); 
-    // manager3.add(Tap); 
-    // modalManager.add(Tap2)
+    manager1.add(Tap); 
+    manager2.add(Tap); 
+    manager3.add(Tap); 
+    modalManager.add(Tap2)
 
-    // manager1.on('tap', openModal);
+    manager1.on('tap', openModal);
 
-    // manager2.on('tap', openModal);
+    manager2.on('tap', openModal);
 
-    // manager3.on('tap', openModal);
+    manager3.on('tap', openModal);
 
-    // modalManager.on('tap', function(){
-    //     modal.style.display = "none";
-    // });
+    modalManager.on('tap', function(){
+        modal.style.display = "none";
+    });
 
 
 
-    //   testing pinch
-    //hammertime.get('pinch').set({ enable: true });
-        var Pinch = new Hammer.Pinch();
-        manager1.add(Pinch); 
-        manager2.add(Pinch); 
-        manager3.add(Pinch); 
-        modalManager.add(Pinch);
+    // //   testing pinch
+    // //hammertime.get('pinch').set({ enable: true });
+    //     var Pinch = new Hammer.Pinch();
+    //     manager1.add(Pinch); 
+    //     manager2.add(Pinch); 
+    //     manager3.add(Pinch); 
+    //     modalManager.add(Pinch);
 
         
 
-        manager1.on('pinch pinchout', function(e){
-            modal.style.display = "block";
-            modalImg.src = e.target.src;
-            captionText.innerHTML = e.target.alt;
-        });
-        manager2.on('pinch pinchout', function(e){
-            modal.style.display = "block";
-            modalImg.src = e.target.src;
-            captionText.innerHTML = e.target.alt;
-        }); 
-        manager3.on('pinch pinchout', function(e){
-            modal.style.display = "block";
-            modalImg.src = e.target.src;
-            captionText.innerHTML = e.target.alt;
-        });
+    //     manager1.on('pinch', function(e){
+    //         modal.style.display = "block";
+    //         modalImg.src = e.target.src;
+    //         captionText.innerHTML = e.target.alt;
+    //     });
+    //     manager2.on('pinch', function(e){
+    //         modal.style.display = "block";
+    //         modalImg.src = e.target.src;
+    //         captionText.innerHTML = e.target.alt;
+    //     }); 
+    //     manager3.on('pinch', function(e){
+    //         modal.style.display = "block";
+    //         modalImg.src = e.target.src;
+    //         captionText.innerHTML = e.target.alt;
+    //     });
 
-        modalManager.on('pinch pinchin', function(){
-            modal.style.display = "none";
-        });
+    //     modalManager.on('pinch', function(){
+    //         modal.style.display = "none";
+    //     });
 
 
 
@@ -85,11 +85,11 @@ document.addEventListener('DOMContentLoaded', function() {
       modal.style.display = "none";
     }
 
-    // function openModal(e){
-    //     modal.style.display = "block";
-    //     modalImg.src = e.target.src;
-    //     captionText.innerHTML = e.target.alt;
-    // }
+    function openModal(e){
+        modal.style.display = "block";
+        modalImg.src = e.target.src;
+        captionText.innerHTML = e.target.alt;
+    }
 
     document.querySelector(".container").classList.remove("hidden");
 
