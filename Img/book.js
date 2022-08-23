@@ -54,13 +54,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
         
 
-        manager1.on('pinch', openModal);
-        manager2.on('pinch', openModal);
-        manager3.on('pinch', openModal);
-
-        modalManager.on('pinch', function(){
-            modal.style.display = "none";
+        manager1.on('pinch', function(e){
+            modal.style.display = "block";
+            modalImg.src = e.target.src;
+            captionText.innerHTML = e.target.alt;
         });
+        manager2.on('pinch', function(e){
+            modal.style.display = "block";
+            modalImg.src = e.target.src;
+            captionText.innerHTML = e.target.alt;
+        });
+        manager3.on('pinch', function(e){
+            modal.style.display = "block";
+            modalImg.src = e.target.src;
+            captionText.innerHTML = e.target.alt;
+        });
+
+        // modalManager.on('pinch', function(){
+        //     modal.style.display = "none";
+        // });
 
 
 
