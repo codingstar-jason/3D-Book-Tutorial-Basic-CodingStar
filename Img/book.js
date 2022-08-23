@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
         manager1.add(Pinch); 
         manager2.add(Pinch); 
         manager3.add(Pinch); 
-        modalManager.add(Pinch);
+        //modalManager.add(Pinch);
 
         
 
@@ -85,11 +85,11 @@ document.addEventListener('DOMContentLoaded', function() {
       modal.style.display = "none";
     }
 
-    function openModal(e){
-        modal.style.display = "block";
-        modalImg.src = e.target.src;
-        captionText.innerHTML = e.target.alt;
-    }
+    // function openModal(e){
+    //     modal.style.display = "block";
+    //     modalImg.src = e.target.src;
+    //     captionText.innerHTML = e.target.alt;
+    // }
 
     document.querySelector(".container").classList.remove("hidden");
 
