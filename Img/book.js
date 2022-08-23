@@ -54,11 +54,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         
 
-        manager1.on('pinchout', openModal);
-        manager2.on('pinchout', openModal);
-        manager3.on('pinchout', openModal);
+        manager1.on('pinch', openModal);
+        manager2.on('pinch', openModal);
+        manager3.on('pinch', openModal);
 
-        modalManager.on('pinchin', function(){
+        modalManager.on('pinch', function(){
             modal.style.display = "none";
         });
 
