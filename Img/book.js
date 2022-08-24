@@ -1,27 +1,25 @@
-
 window.onload = () => {
     // (A) GET ALL IMAGES
     let all = document.getElementsByTagName("img");
     console.log(all);
 
-    
-
-// manager1.on('tap', openModal);
     // (B) CLICK TO GO FULLSCREEN
     
     if (all.length>0) { 
         for (let i of all) {
-            // var manager = new Hammer.Manager(i);
+            var manager = new Hammer.Manager(i);
 
-            // //tap for desktop testing
-            // var Tap = new Hammer.Tap({
-            //     taps: 1
-            // });
+            //tap for desktop testing
+            var Tap = new Hammer.Tap({
+                taps: 1
+            });
             
 
-            // manager.add(Tap); 
-        i.onclick = () => {
+            manager.add(Tap); 
+        manager.on("tap", (e) => {
             // (B1) EXIT FULLSCREEN
+            console.log(e.target.src);
+            console.log(e.target);
             if (document.fullscreenElement != null || document.webkitFullscreenElement != null) {
                 if (document.exitFullscreen) { 
                     document.exitFullscreen(); 
@@ -32,11 +30,11 @@ window.onload = () => {
 
             // (B2) ENTER FULLSCREEN
             else {
-            if (i.requestFullscreen) 
-            { i.requestFullscreen(); }
-            else { i.webkitRequestFullScreen(); }
+            if (e.target.requestFullscreen) 
+            { e.target.requestFullscreen(); }
+            else { e.target.webkitRequestFullScreen(); }
             }
-      };
+      });
     }}
   };
 
