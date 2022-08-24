@@ -10,13 +10,11 @@ window.onload = () => {
             var manager = new Hammer.Manager(i);
 
             //tap for desktop testing
-            var Tap = new Hammer.Tap({
-                taps: 1
-            });
+            var Pinch = new Hammer.Pinch();
             
 
-            manager.add(Tap); 
-        manager.on("tap", (e) => {
+            manager.add(Pinch); 
+        manager.on("pinch", (e) => {
             // (B1) EXIT FULLSCREEN
             console.log(e.target.src);
             console.log(e.target);
