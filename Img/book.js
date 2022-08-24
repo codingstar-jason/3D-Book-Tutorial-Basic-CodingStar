@@ -1,48 +1,90 @@
 
+window.onload = () => {
+    // (A) GET ALL IMAGES
+    let all = document.getElementsByTagName("img");
+    console.log(all);
+
+    
+
+// manager1.on('tap', openModal);
+    // (B) CLICK TO GO FULLSCREEN
+    
+    if (all.length>0) { 
+        for (let i of all) {
+            // var manager = new Hammer.Manager(i);
+
+            // //tap for desktop testing
+            // var Tap = new Hammer.Tap({
+            //     taps: 1
+            // });
+            
+
+            // manager.add(Tap); 
+        i.onclick = () => {
+            // (B1) EXIT FULLSCREEN
+            if (document.fullscreenElement != null || document.webkitFullscreenElement != null) {
+                if (document.exitFullscreen) { 
+                    document.exitFullscreen(); 
+                }
+                else { 
+                    document.webkitCancelFullScreen(); }
+                }
+
+            // (B2) ENTER FULLSCREEN
+            else {
+            if (i.requestFullscreen) 
+            { i.requestFullscreen(); }
+            else { i.webkitRequestFullScreen(); }
+            }
+      };
+    }}
+  };
 
 document.addEventListener('DOMContentLoaded', function() {
         
     
     // Get the modal
-    var modal = document.getElementById("myModal");
+    // var modal = document.getElementById("myModal");
 
     // Get the image and insert it inside the modal - use its "alt" text as a caption
-    var img1 = document.getElementById("myImg01");
-    var img2 = document.getElementById("myImg02");
-    var img3 = document.getElementById("myImg03");
-    var modalImg = document.getElementById("img01");
-    var captionText = document.getElementById("mod-caption");
-    var manager1 = new Hammer.Manager(img1);
-    var manager2 = new Hammer.Manager(img2);
-    var manager3 = new Hammer.Manager(img3);
+    //var imgs = document.getElementById("myImg01");
+    // var img2 = document.getElementById("myImg02");
+    // var img3 = document.getElementById("myImg03");
+    // var modalImg = document.getElementById("img01");
+    // var captionText = document.getElementById("mod-caption");
 
-    var modalManager = new Hammer.Manager(modalImg);
+
+    // var manager1 = new Hammer.Manager(imgs);
+    // // var manager2 = new Hammer.Manager(img2);
+    // // var manager3 = new Hammer.Manager(img3);
+
+    // var modalManager = new Hammer.Manager(modalImg);
     
-    //tap for desktop testing
-    var Tap = new Hammer.Tap({
-        taps: 1
-      });
+    // //tap for desktop testing
+    // var Tap = new Hammer.Tap({
+    //     taps: 1
+    //   });
       
-    var Tap2 = new Hammer.Tap({
-    taps: 2
-    });
+    // // var Tap2 = new Hammer.Tap({
+    // // taps: 2
+    // // });
 
-    manager1.add(Tap); 
-    manager2.add(Tap); 
-    manager3.add(Tap); 
-    modalManager.add(Tap2)
+    // manager1.add(Tap); 
+    // // manager2.add(Tap); 
+    // // manager3.add(Tap); 
+    // // modalManager.add(Tap2)
 
-    manager1.on('tap', openModal);
+    // // manager1.on('tap', openModal);
 
-    manager2.on('tap', openModal);
+    // manager2.on('tap', openModal);
 
-    manager3.on('tap', openModal);
+    // manager3.on('tap', openModal);
 
-    modalManager.on('tap', function(){
-        modal.style.display = "none";
-    });
+    // modalManager.on('tap', function(){
+    //     modal.style.display = "none";
+    // });
 
-
+    
 
     // //   testing pinch
     // //hammertime.get('pinch').set({ enable: true });
@@ -77,19 +119,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
+    // // Get the <span> element that closes the modal
+    // var span = document.getElementsByClassName("close")[0];
     
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-      modal.style.display = "none";
-    }
+    // // When the user clicks on <span> (x), close the modal
+    // span.onclick = function() {
+    //   modal.style.display = "none";
+    // }
 
-    function openModal(e){
-        modal.style.display = "block";
-        modalImg.src = e.target.src;
-        captionText.innerHTML = e.target.alt;
-    }
+    // function openModal(e){
+    //     modal.style.display = "block";
+    //     modalImg.src = e.target.src;
+    //     captionText.innerHTML = e.target.alt;
+    // }
 
     document.querySelector(".container").classList.remove("hidden");
 
