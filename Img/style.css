@@ -61,6 +61,14 @@
                 padding-top: 5px;
             }
         }      */
+
+        
+      .pinch-zoom-container {
+        overflow: hidden;
+        height: 90%;
+        width: 90%
+      }
+
         .header {
             position: fixed;
             /* left: 0; */

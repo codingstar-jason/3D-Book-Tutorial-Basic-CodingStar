@@ -2,79 +2,43 @@
 
 document.addEventListener('DOMContentLoaded', function() {
         
-    window.onload = () => {
-        // (A) GET ALL IMAGES
-        let all = document.getElementsByTagName("img");
-        console.log(all);
     
-        // (B) CLICK TO GO FULLSCREEN
-        
-        if (all.length>0) { 
-            for (let i of all) {
-                var manager = new Hammer.Manager(i);
-    
-                //tap for desktop testing
-                var Pinch = new Hammer.Pinch();
-                
-    
-                manager.add(Pinch); 
-            manager.on("pinch", (e) => {
-                // (B1) EXIT FULLSCREEN
-                console.log(e.target.src);
-                console.log(e.target);
-                if (document.fullscreenElement != null || document.webkitFullscreenElement != null) {
-                    if (document.exitFullscreen) { 
-                        document.exitFullscreen(); 
-                    }
-                    else { 
-                        document.webkitCancelFullScreen(); }
-                    }
-    
-                // (B2) ENTER FULLSCREEN
-                else {
-                if (e.target.requestFullscreen) 
-                { e.target.requestFullscreen(); }
-                else { e.target.webkitRequestFullScreen(); }
-                }
-          });
-        }}
-      };
     // Get the modal
-    // var modal = document.getElementById("myModal");
+    var modal = document.getElementById("myModal");
 
-    // Get the image and insert it inside the modal - use its "alt" text as a caption
-    //var imgs = document.getElementById("myImg01");
-    // var img2 = document.getElementById("myImg02");
-    // var img3 = document.getElementById("myImg03");
-    // var modalImg = document.getElementById("img01");
-    // var captionText = document.getElementById("mod-caption");
+    //Get the image and insert it inside the modal - use its "alt" text as a caption
+    var imgs = document.getElementById("myImg01");
+    var img2 = document.getElementById("myImg02");
+    var img3 = document.getElementById("myImg03");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("mod-caption");
 
 
-    // var manager1 = new Hammer.Manager(imgs);
-    // // var manager2 = new Hammer.Manager(img2);
-    // // var manager3 = new Hammer.Manager(img3);
+    var manager1 = new Hammer.Manager(imgs);
+    var manager2 = new Hammer.Manager(img2);
+    var manager3 = new Hammer.Manager(img3);
 
-    // var modalManager = new Hammer.Manager(modalImg);
+    //var modalManager = new Hammer.Manager(modalImg);
     
-    // //tap for desktop testing
-    // var Tap = new Hammer.Tap({
-    //     taps: 1
-    //   });
+    //tap for desktop testing
+    var Tap = new Hammer.Tap({
+        taps: 1
+      });
       
-    // // var Tap2 = new Hammer.Tap({
-    // // taps: 2
-    // // });
+    // var Tap2 = new Hammer.Tap({
+    // taps: 2
+    // });
 
-    // manager1.add(Tap); 
-    // // manager2.add(Tap); 
-    // // manager3.add(Tap); 
-    // // modalManager.add(Tap2)
+    manager1.add(Tap); 
+    manager2.add(Tap); 
+    manager3.add(Tap); 
+    // modalManager.add(Tap2)
 
-    // // manager1.on('tap', openModal);
+    manager1.on('tap', openModal);
 
-    // manager2.on('tap', openModal);
+    manager2.on('tap', openModal);
 
-    // manager3.on('tap', openModal);
+    manager3.on('tap', openModal);
 
     // modalManager.on('tap', function(){
     //     modal.style.display = "none";
@@ -115,20 +79,292 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     
-    // // Get the <span> element that closes the modal
-    // var span = document.getElementsByClassName("close")[0];
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
     
-    // // When the user clicks on <span> (x), close the modal
-    // span.onclick = function() {
-    //   modal.style.display = "none";
-    // }
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
 
-    // function openModal(e){
-    //     modal.style.display = "block";
-    //     modalImg.src = e.target.src;
-    //     captionText.innerHTML = e.target.alt;
-    // }
+    function openModal(e){
+        modal.style.display = "block";
+        modalImg.src = e.target.src;
+        captionText.innerHTML = e.target.alt;
+    }
+// -----------------------------------------------------------------------------------------------------------------------------------------
+// window.onload = () => {
+//     // (A) GET ALL IMAGES
+//     let all = document.getElementsByTagName("img");
+//     console.log(all);
 
+//     // (B) CLICK TO GO FULLSCREEN
+    
+//     if (all.length>0) { 
+//         for (let i of all) {
+//             var manager = new Hammer.Manager(i);
+
+//             //tap for desktop testing
+//             var Pinch = new Hammer.Pinch();
+            
+
+//             manager.add(Pinch); 
+//         manager.on("pinch", (e) => {
+//             // (B1) EXIT FULLSCREEN
+//             console.log(e.target.src);
+//             console.log(e.target);
+//             if (document.fullscreenElement != null || document.webkitFullscreenElement != null) {
+//                 if (document.exitFullscreen) { 
+//                     document.exitFullscreen(); 
+//                 }
+//                 else { 
+//                     document.webkitCancelFullScreen(); }
+//                 }
+
+//             // (B2) ENTER FULLSCREEN
+//             else {
+//             if (e.target.requestFullscreen) 
+//             { e.target.requestFullscreen(); }
+//             else { e.target.webkitRequestFullScreen(); }
+//             }
+//       });
+//     }}
+//   };
+
+
+var MIN_SCALE = 1; // 1=scaling when first loaded
+var MAX_SCALE = 64;
+
+// HammerJS fires "pinch" and "pan" events that are cumulative in nature and not
+// deltas. Therefore, we need to store the "last" values of scale, x and y so that we can
+// adjust the UI accordingly. It isn't until the "pinchend" and "panend" events are received
+// that we can set the "last" values.
+
+// Our "raw" coordinates are not scaled. This allows us to only have to modify our stored
+// coordinates when the UI is updated. It also simplifies our calculations as these
+// coordinates are without respect to the current scale.
+
+var imgWidth = null;
+var imgHeight = null;
+var viewportWidth = null;
+var viewportHeight = null;
+var scale = null;
+var lastScale = null;
+var container = null;
+// var img = null;
+var x = 0;
+var lastX = 0;
+var y = 0;
+var lastY = 0;
+var pinchCenter = null;
+
+// We need to disable the following event handlers so that the browser doesn't try to
+// automatically handle our image drag gestures.
+var disableImgEventHandlers = function () {
+  var events = ['onclick', 'onmousedown', 'onmousemove', 'onmouseout', 'onmouseover',
+                'onmouseup', 'ondblclick', 'onfocus', 'onblur'];
+
+  events.forEach(function (event) {
+    modalImg[event] = function () {
+      return false;
+    };
+  });
+};
+
+// Traverse the DOM to calculate the absolute position of an element
+var absolutePosition = function (el) {
+  var x = 0,
+    y = 0;
+
+  while (el !== null) {
+    x += el.offsetLeft;
+    y += el.offsetTop;
+    el = el.offsetParent;
+  }
+  return { x: x, y: y };
+};
+
+var restrictScale = function (scale) {
+  if (scale < MIN_SCALE) {
+    scale = MIN_SCALE;
+  } else if (scale > MAX_SCALE) {
+    scale = MAX_SCALE;
+  }
+  return scale;
+};
+
+var restrictRawPos = function (pos, viewportDim, imgDim) {
+  if (pos < viewportDim/scale - imgDim) { // too far left/up?
+    pos = viewportDim/scale - imgDim;
+  } else if (pos > 0) { // too far right/down?
+    pos = 0;
+  }
+  return pos;
+};
+
+var updateLastPos = function (deltaX, deltaY) {
+  lastX = deltaX;
+  lastY = deltaY;
+};
+
+var translate = function (deltaX, deltaY) {
+  // We restrict to the min of the viewport width/height or current width/height as the
+  // current width/height may be smaller than the viewport width/height
+
+  var newX = restrictRawPos(lastX + deltaX/scale,
+                            Math.min(viewportWidth, curWidth), imgWidth);
+  x = newX;
+  modalImg.style.marginLeft = Math.ceil(newX*scale) + 'px';
+
+  var newY = restrictRawPos(lastY + deltaY/scale,
+                            Math.min(viewportHeight, curHeight), imgHeight);
+  y = newY;
+  modalImg.style.marginTop = Math.ceil(newY*scale) + 'px';
+};
+
+var zoom = function (scaleBy) {
+  scale = restrictScale(lastScale*scaleBy);
+
+  curWidth = imgWidth*scale;
+  curHeight = imgHeight*scale;
+  modalImg.style.width = Math.ceil(curWidth) + 'px';
+  modalImg.style.height = Math.ceil(curHeight) + 'px';
+
+  // Adjust margins to make sure that we aren't out of bounds
+  translate(0, 0);
+};
+
+var rawCenter = function (e) {
+  var pos = absolutePosition(container);
+
+  // We need to account for the scroll position
+  var scrollLeft = window.pageXOffset ? window.pageXOffset : document.body.scrollLeft;
+  var scrollTop = window.pageYOffset ? window.pageYOffset : document.body.scrollTop;
+
+  var zoomX = -x + (e.center.x - pos.x + scrollLeft)/scale;
+  var zoomY = -y + (e.center.y - pos.y + scrollTop)/scale;
+
+  return { x: zoomX, y: zoomY };
+};
+
+var updateLastScale = function () {
+  lastScale = scale;
+};
+
+var zoomAround = function (scaleBy, rawZoomX, rawZoomY, doNotUpdateLast) {
+  // Zoom
+  zoom(scaleBy);
+ 
+  // New raw center of viewport
+  var rawCenterX = -x + Math.min(viewportWidth, curWidth)/2/scale;
+  var rawCenterY = -y + Math.min(viewportHeight, curHeight)/2/scale;
+
+  // Delta
+  var deltaX = (rawCenterX - rawZoomX)*scale;
+  var deltaY = (rawCenterY - rawZoomY)*scale;
+
+  // Translate back to zoom center
+  translate(deltaX, deltaY);
+
+  if (!doNotUpdateLast) {
+    updateLastScale();
+    updateLastPos();
+  }
+};
+
+var zoomCenter = function (scaleBy) {
+   
+  // Center of viewport
+  var zoomX = -x + Math.min(viewportWidth, curWidth)/2/scale;
+  var zoomY = -y + Math.min(viewportHeight, curHeight)/2/scale;
+
+  zoomAround(scaleBy, zoomX, zoomY);
+};
+
+var zoomIn = document.getElementById("zoomIn");
+var zoomOut = document.getElementById("zoomOut");
+zoomIn.addEventListener("click",function(){
+   
+    zoomCenter(2);
+});
+zoomOut.addEventListener("click", function(){
+  
+    zoomCenter(1/2);
+});
+
+modalImg.addEventListener("load", function(){
+    console.log("image loaded");
+
+ 
+  container = modalImg.parentElement;
+
+  disableImgEventHandlers();
+
+  imgWidth = modalImg.width;
+  imgHeight = modalImg.height;
+  console.log(imgWidth ,  imgHeight);
+  viewportWidth =modalImg.parentElement.offsetWidth;
+  scale = viewportWidth/imgWidth;
+  lastScale = scale;
+  viewportHeight = modalImg.parentElement.offsetHeight;
+  curWidth = imgWidth*scale;
+  curHeight = imgHeight*scale;
+
+  var hammer = new Hammer(container, {
+    domEvents: true
+  });
+
+  hammer.get('pinch').set({
+    enable: true
+  });
+
+  hammer.on('pan', function (e) {
+    translate(e.deltaX, e.deltaY);
+  });
+
+  hammer.on('panend', function (e) {
+    updateLastPos();
+  });
+
+  hammer.on('pinch', function (e) {
+
+    // We only calculate the pinch center on the first pinch event as we want the center to
+    // stay consistent during the entire pinch
+    if (pinchCenter === null) {
+      pinchCenter = rawCenter(e);
+      var offsetX = pinchCenter.x*scale - (-x*scale + Math.min(viewportWidth, curWidth)/2);
+      var offsetY = pinchCenter.y*scale - (-y*scale + Math.min(viewportHeight, curHeight)/2);
+      pinchCenterOffset = { x: offsetX, y: offsetY };
+    }
+
+    // When the user pinch zooms, she/he expects the pinch center to remain in the same
+    // relative location of the screen. To achieve this, the raw zoom center is calculated by
+    // first storing the pinch center and the scaled offset to the current center of the
+    // image. The new scale is then used to calculate the zoom center. This has the effect of
+    // actually translating the zoom center on each pinch zoom event.
+    var newScale = restrictScale(scale*e.scale);
+    var zoomX = pinchCenter.x*newScale - pinchCenterOffset.x;
+    var zoomY = pinchCenter.y*newScale - pinchCenterOffset.y;
+    var zoomCenter = { x: zoomX/newScale, y: zoomY/newScale };
+
+    zoomAround(e.scale, zoomCenter.x, zoomCenter.y, true);
+  });
+
+  hammer.on('pinchend', function (e) {
+    updateLastScale();
+    updateLastPos();
+    pinchCenter = null;
+  });
+
+  hammer.on('doubletap', function (e) {
+    var c = rawCenter(e);
+    zoomAround(2, c.x, c.y);
+  });
+
+});
+ 
+
+// -----------------------------------------------------------------------------------------------------------------------------------------
     document.querySelector(".container").classList.remove("hidden");
 
     const pageFlip = new St.PageFlip(
