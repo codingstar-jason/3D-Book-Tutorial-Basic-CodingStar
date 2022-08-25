@@ -85,6 +85,19 @@ document.addEventListener('DOMContentLoaded', function() {
     // When the user clicks on <span> (x), close the modal
     span.onclick = function() {
       modal.style.display = "none";
+      imgWidth = null;
+    imgHeight = null;
+         viewportWidth = null;
+         viewportHeight = null;
+         scale = 1;
+         lastScale = null;
+         container = null;
+        // var img = null;
+         x = 0;
+     lastX = 0;
+         y = 0;
+         lastY = 0;
+         pinchCenter = null; 
     }
 
     function openModal(e){
@@ -133,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 var MIN_SCALE = 1; // 1=scaling when first loaded
-var MAX_SCALE = 64;
+var MAX_SCALE = 8;
 
 // HammerJS fires "pinch" and "pan" events that are cumulative in nature and not
 // deltas. Therefore, we need to store the "last" values of scale, x and y so that we can
@@ -181,6 +194,7 @@ var absolutePosition = function (el) {
     y += el.offsetTop;
     el = el.offsetParent;
   }
+  console.log( { x: x, y: y });
   return { x: x, y: y };
 };
 
@@ -190,6 +204,7 @@ var restrictScale = function (scale) {
   } else if (scale > MAX_SCALE) {
     scale = MAX_SCALE;
   }
+  console.log(scale);
   return scale;
 };
 
@@ -203,8 +218,8 @@ var restrictRawPos = function (pos, viewportDim, imgDim) {
 };
 
 var updateLastPos = function (deltaX, deltaY) {
-  lastX = deltaX;
-  lastY = deltaY;
+  lastX = x;
+  lastY = y;
 };
 
 var translate = function (deltaX, deltaY) {
@@ -294,14 +309,16 @@ zoomOut.addEventListener("click", function(){
 
 modalImg.addEventListener("load", function(){
     console.log("image loaded");
+    console.log( { x: x, y: y });
+    console.log(scale);
 
- 
+
   container = modalImg.parentElement;
 
   disableImgEventHandlers();
 
-  imgWidth = modalImg.width;
-  imgHeight = modalImg.height;
+  imgWidth = 1200;
+  imgHeight = 882;
   console.log(imgWidth ,  imgHeight);
   viewportWidth =modalImg.parentElement.offsetWidth;
   scale = viewportWidth/imgWidth;

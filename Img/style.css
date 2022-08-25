@@ -65,8 +65,15 @@
         
       .pinch-zoom-container {
         overflow: hidden;
+        /* height: 90%;
+        width: 90%;
+        display: block; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
         height: 90%;
-        width: 90%
+        width: 1248px;
+
       }
 
         .header {
@@ -255,10 +262,8 @@
         
         /* Modal Content (Image) */
         .modal-content {
-          margin: auto;
-          display: block;
-          height: 90%;
-          
+            display: block;  
+            height:100%;
         }
         
         /* Caption of Modal Image (Image Text) - Same Width as the Image */
