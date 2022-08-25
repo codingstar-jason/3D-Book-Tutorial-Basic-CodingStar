@@ -1,44 +1,44 @@
-window.onload = () => {
-    // (A) GET ALL IMAGES
-    let all = document.getElementsByTagName("img");
-    console.log(all);
 
-    // (B) CLICK TO GO FULLSCREEN
-    
-    if (all.length>0) { 
-        for (let i of all) {
-            var manager = new Hammer.Manager(i);
-
-            //tap for desktop testing
-            var Pinch = new Hammer.Pinch();
-            
-
-            manager.add(Pinch); 
-        manager.on("pinch", (e) => {
-            // (B1) EXIT FULLSCREEN
-            console.log(e.target.src);
-            console.log(e.target);
-            if (document.fullscreenElement != null || document.webkitFullscreenElement != null) {
-                if (document.exitFullscreen) { 
-                    document.exitFullscreen(); 
-                }
-                else { 
-                    document.webkitCancelFullScreen(); }
-                }
-
-            // (B2) ENTER FULLSCREEN
-            else {
-            if (e.target.requestFullscreen) 
-            { e.target.requestFullscreen(); }
-            else { e.target.webkitRequestFullScreen(); }
-            }
-      });
-    }}
-  };
 
 document.addEventListener('DOMContentLoaded', function() {
         
+    window.onload = () => {
+        // (A) GET ALL IMAGES
+        let all = document.getElementsByTagName("img");
+        console.log(all);
     
+        // (B) CLICK TO GO FULLSCREEN
+        
+        if (all.length>0) { 
+            for (let i of all) {
+                var manager = new Hammer.Manager(i);
+    
+                //tap for desktop testing
+                var Pinch = new Hammer.Pinch();
+                
+    
+                manager.add(Pinch); 
+            manager.on("pinch", (e) => {
+                // (B1) EXIT FULLSCREEN
+                console.log(e.target.src);
+                console.log(e.target);
+                if (document.fullscreenElement != null || document.webkitFullscreenElement != null) {
+                    if (document.exitFullscreen) { 
+                        document.exitFullscreen(); 
+                    }
+                    else { 
+                        document.webkitCancelFullScreen(); }
+                    }
+    
+                // (B2) ENTER FULLSCREEN
+                else {
+                if (e.target.requestFullscreen) 
+                { e.target.requestFullscreen(); }
+                else { e.target.webkitRequestFullScreen(); }
+                }
+          });
+        }}
+      };
     // Get the modal
     // var modal = document.getElementById("myModal");
 
