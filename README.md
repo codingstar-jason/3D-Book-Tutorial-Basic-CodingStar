@@ -1,3 +1,3 @@
-# 3D-Book-Tutorial-Basic
+# Silver Horn Interactive 
 
-[show in browser](https://metiee.github.io/3D-Book-interactive/Img/index.html)
+[show in browser](https://nelson-atkins-museum.github.io/3D-Book-interactive/Img/index.html)
