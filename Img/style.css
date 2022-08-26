@@ -1,6 +1,5 @@
 
 
-
         /* .img-with-text
         {
             transition:transform 1s ease;
@@ -16,11 +15,14 @@
         } */
 
 @media screen and (min-width: 1026px) {
-    .book .paper .img .img-with-text .header .body .header1 .container .fa .far .fas .hidden .caption .home-btn .footer .btn-prev .btn-next
+    .book .paper .img .img-with-text .header .body .header1 .container .fa .far .fas .hidden .caption .home-btn .footer .btn-prev .btn-next 
      {
          
             width: 100%;
             
+        }
+       .img .zoomE .img-with-text{
+            width:100%;
         }
        
     }
@@ -32,6 +34,9 @@
            
             width: 100%;
                 
+        }
+       .img.zoomE .img-with-text{
+            width:100%
         }
            
         }
@@ -69,9 +74,9 @@
     left: 0;
     top: 100px;
     width: 100%;
-    background: radial-gradient(#808285, #141510);
+    /* background: radial-gradient(#808285, #141510); */
     text-align: center;
-    color: #A4A4A1;
+    color: #e5d1b9;
     font-size: 15px;
     line-height: 2; 
     font-family: ff-scala-sans-pro, sans-serif;
@@ -85,7 +90,7 @@
     position: fixed;
     left: 0;
     bottom: 10px;
-    color:white;
+    color: #e5d1b9;
     text-align: left;
  }
 
@@ -95,8 +100,8 @@
     left: 0;
     bottom: 100px;
     width: 100%;
-    background: radial-gradient( #808285, #141510);
-    color: #F1F2F2;
+    /* background: radial-gradient( #808285, #141510); */
+    color:  #e5d1b9;
     text-align: center;
     font-family: ff-scala-sans-pro, sans-serif;
     padding-top: 10px;
@@ -111,7 +116,7 @@
  }
 
 h1 {
-    color: white;
+    color:  #e5d1b9;
 }
 .container{
     width: 90%;
@@ -122,10 +127,10 @@ h1 {
     left: 0;
     top: 50px;
     width: 100%;
-    background: radial-gradient(#141510);
-    color: white;
+    /* background: radial-gradient(#141510); */
+    
     text-align: center;
-    color: #A4A4A1;
+    color: #ce4936;
     font-size: 25px;
     line-height: 2; 
     font-family: ff-scala-sans-pro, sans-serif;
@@ -162,7 +167,7 @@ body {
 .img-with-text{
     position:relative;
     font: 14px FF-Scala Sans Pro;
-    color: #F1F2F2;
+    color:  #e5d1b9;
     top:5px; 
     text-align:left;
 }
@@ -173,14 +178,15 @@ body {
 }
 .img-with-text img {
     height: 438px;
+   
 }
 .caption{
-
-    color:#F1F2F2;
-    line-height: 1.4;
+    font-style: italic;
+    color: #e5d1b9;
+    line-height: 1.6;
     width: 600px;
     font-family: ff-scala-sans-pro, sans-serif;
-    font-size: 12px;    
+    font-size: 14px;    
 }
 
 /* Controller Buttons */

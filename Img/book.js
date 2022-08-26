@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("demoBookExample"),
         {
             width: 610, // base page width
-            height: 500, // base page height
+            height: 515, // base page height
 
             size: "fixed",
             // set threshold values:
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
     window.onload = () => {
         // (A) GET ALL IMAGES
         let all = document.getElementsByClassName("zoomE");
-       
+                    
         // (B) CLICK TO GO FULLSCREEN
         if (all.length>0) { for (let i of all) {
           i.onclick = () => {
@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
             else {
               if (i.requestFullscreen) { i.requestFullscreen(); }
               else { i.webkitRequestFullScreen(); }
+              
             }
           };
         }}
