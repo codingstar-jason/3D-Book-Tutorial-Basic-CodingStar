@@ -1,0 +1,341 @@
+/* 
+        .img-with-text
+        {
+            transition:transform 1s ease;
+            
+        }
+        .img-with-text:hover img
+        {
+            -webkit-transform:scale(1.2);
+            transform:scale(1.2);
+            transition: width 1s;
+            transition-delay: 1s;
+        
+        } */
+
+/* 
+@media screen and (min-width: 1026px) {
+    .book .paper .img .img-with-text .header .body .header1 .container .fa .far .fas .hidden .caption .home-btn .footer .btn-prev .btn-next
+
+     {
+         
+            width: 100%;
+            
+        }
+       .img .zoomE .img-with-text{
+            width:100%;
+        }
+       
+    }
+    
+    @media screen and (max-width: 1025px), screen and (min-width: 800px) {
+        .book .paper .img .img-with-text .header .body .header1 .container .fa .far .fas .hidden .caption .home-btn .footer .btn-prev .btn-next
+         {
+            
+           
+            width: 100%;
+                
+        }
+       .img.zoomE .img-with-text{
+            width:100%
+        }
+           
+        }
+
+        @media screen and (max-width: 799px), screen and (min-width: 600px) {
+            .book .paper .img .img-with-text .header .body .header1 .container .fa .far .fas .hidden .caption .home-btn .footer .btn-prev .btn-next
+             {
+                 
+                    width: 100%;
+
+
+                    margin-left: 600px;
+                    
+            }
+               
+            } 
+
+            @media screen and (max-width: 599px),screen and (min-width: 450px)  {
+            .book .paper .img .img-with-text .header .body .header1 .container .fa .far .fas .hidden .caption .home-btn .footer .btn-prev .btn-next {
+          
+                width: 50%;
+                padding-top: 5px;
+            }
+        } 
+        @media screen and (max-width: 449px), screen and (min-width: 325px)  {
+            .book .paper .img .img-with-text .header .body .header1 .container .fa .far .fas .hidden .caption .home-btn .footer .btn-prev .btn-next {
+          
+                width: 50%;
+                padding-top: 5px;
+            }
+
+        }      */
+
+
+        
+      .pinch-zoom-container {
+        overflow: hidden;
+        height: 90%;
+        width: 1248px;
+
+      }
+
+
+.img-with-text{
+    position:relative;
+    font: 14px FF-Scala Sans Pro;
+    color:  #e5d1b9;
+    top:5px; 
+    text-align:left;
+          
+        }
+
+.caption{
+    font-style: italic;
+    color: #e5d1b9;
+    line-height: 1.6;
+            text-align:center;
+            width: 800px;
+            font-family: ff-scala-sans-pro, sans-serif;
+            font-size: 14px;    
+        }
+        
+
+
+
+h1 {
+    color:  #e5d1b9;
+}
+
+.header1 {
+    position: fixed;
+    left: 0;
+    top: 100px;
+    width: 100%;
+    /* background: radial-gradient(#808285, #141510); */
+    text-align: center;
+    color: #e5d1b9;
+    font-size: 15px;
+    line-height: 2; 
+    font-family: ff-scala-sans-pro, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.header {
+    position: fixed;
+    left: 0;
+    top: 50px;
+   
+    color: #ce4936;
+
+            /* width: 100%; */
+            /* background: radial-gradient(#141510); */
+            /* color: white; */
+            text-align: center;
+           
+            font-size: 40px;
+            line-height: 2; 
+            font-family: ff-scala-sans-pro, sans-serif;
+            font-weight: 700;
+            /* font-style: normal; */
+        }
+        
+.footer {
+    
+    /* background: radial-gradient( #808285, #141510); */
+    color:  #e5d1b9;
+    text-align: center;
+    font-family: ff-scala-sans-pro, sans-serif;
+
+            position: fixed;
+            /* left: 0; */
+            bottom: 10px;
+            width: 100%;
+            
+            padding-top: 20px;
+            padding-bottom: 15px;
+         }
+         
+         
+
+.home-btn {
+
+    color: #e5d1b9;
+    text-align: left;
+            /* font-family: ff-scala-sans-pro, sans-serif; */
+            /* padding-top: 0px; */
+            position: fixed;
+            /* left: 0;
+            bottom: 10px; */
+         }
+        
+         /* .cover{
+            color: white;
+            text-align: center;
+            padding-left: 50px;
+            padding-right: 50px;
+         } */
+        
+
+        .container{
+            width: 90%;
+            margin: auto; /* Center the DIV horizontally */
+        }
+        
+         
+        
+        /* .fa, .far, .fas {
+            font-family: "Font Awesome 5 Free";
+        }  */
+        
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: ff-scala-sans-pro, sans-serif, #A4A4A1;
+            background: radial-gradient(closest-side,#2c2c2c, #2c2c2c, #000000);
+            /* padding-top: 0px;
+            padding-bottom: 60px; */
+            /* font-weight: 400;
+            font-style: normal;
+            text-align: left; */
+            overflow: hidden; /*hides scrollbars*/
+        }
+        
+        
+        /* Book */
+        .page-bkg {
+           background-color: #000000;
+        }
+
+      
+        *{
+            margin: auto;
+            padding:auto;
+            box-sizing: border-box;
+        }
+        .img-with-text img {
+            height: 610px;
+        }
+        .book-desc{
+            text-align:center;
+            color:#F1F2F2;
+            line-height: 1.4;
+            width: 800px;
+            font-family: ff-scala-sans-pro, sans-serif;
+            font-size: 20px;    
+            padding: 10%;
+            padding-top: 20%;
+        }
+        
+        /* Controller Buttons */
+        button {
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            /* margin: 10px;
+            padding-left: 100px;
+            padding-right: 100px;
+            transition: transform 0.5s; */
+            color:#FFFFFF;
+            font-family: ff-scala-sans-pro, sans-serif;
+        }
+/*         
+        button:focus {
+            outline: none;
+        }
+        
+        button:hover i {
+            color: #b3b3b3;
+        } */
+        
+        i {
+            padding-bottom: 5px;
+            font-size: 50px;
+            color: white;
+        }
+        
+        .hidden {
+            visibility: hidden;
+        }
+        
+        
+        /* Style the Image Used to Trigger the Modal */
+        #myImg {
+          border-radius: 5px;
+          cursor: pointer;
+          transition: 0.3s;
+        }
+        
+        /* #myImg:hover {opacity: 0.7;} */
+        
+        /* The Modal (background) */
+        .modal {
+          display: none; /* Hidden by default */
+          position: fixed; /* Stay in place */
+          z-index: 1; /* Sit on top */
+          padding-top: 100px; /* Location of the box */
+          left: 0;
+          top: 0;
+          width: 100%; /* Full width */
+          height: 100%; /* Full height */
+          overflow: auto; /* Enable scroll if needed */
+          background-color: rgb(0,0,0); /* Fallback color */
+          background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+          overflow: hidden;
+        }
+        
+        /* Modal Content (Image) */
+        .modal-content {
+            width: 100%;
+        }
+        
+        /* Caption of Modal Image (Image Text) - Same Width as the Image */
+        #mod-caption {
+            font-family: ff-scala-sans-pro, sans-serif;
+          margin: auto;
+          display: block;
+          width: 80%;
+          max-width: 700px;
+          text-align: center;
+          color: #ccc;
+          padding: 10px 0;
+          height: 150px;
+        }
+        
+        /* Add Animation - Zoom in the Modal */
+        .modal-content, #mod-caption {
+          animation-name: zoom;
+          animation-duration: 0.6s;
+        }
+        
+        @keyframes zoom {
+          from {transform:scale(0)}
+          to {transform:scale(1)}
+        }
+        
+        /* The Close Button */
+        .close {
+          position: absolute;
+          top: 15px;
+          right: 35px;
+          color: #f1f1f1;
+          font-size: 80px;
+          font-weight: bold;
+          transition: 0.3s;
+        }
+        
+        .close:hover,
+        .close:focus {
+          color: #bbb;
+          text-decoration: none;
+          cursor: pointer;
+        }
+        
+        /* 100% Image Width on Smaller Screens */
+        @media only screen and (max-width: 700px){
+          .modal-content {
+            width: 100%;
+          }
+        }
